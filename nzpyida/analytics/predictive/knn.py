@@ -8,6 +8,13 @@
 #
 # The full license is in the LICENSE file, distributed with this software.
 #-----------------------------------------------------------------------------
+"""
+The nearest neighbor family of classification and regression algorithms is
+frequently referred to as memory-based or instance-based learning, and
+sometimes also as lazy learning. These terms correspond to the main concept
+of this approach, which is to replace model creation by memorizing the
+training data set and using it appropriately to make predictions.
+"""
 from typing import List
 from nzpyida.frame import IdaDataFrame
 from nzpyida.base import IdaDataBase

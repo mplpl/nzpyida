@@ -6,7 +6,7 @@ IdaDataFrame
 Open an IdaDataFrame Object.
 ============================
 
-.. currentmodule:: ibmdbpy.frame
+.. currentmodule:: nzpyida.frame
 
 .. autoclass:: IdaDataFrame
 
@@ -69,9 +69,9 @@ Selection, Projection
 ---------------------
 .. automethod:: IdaDataFrame.__getitem__
 
-Selection and Projection are also possible using the ``ibmdbpy.Loc`` object stored in ``IdaDataFrame.loc``.
+Selection and Projection are also possible using the ``nzpyida.Loc`` object stored in ``IdaDataFrame.loc``.
 
-.. autoclass:: ibmdbpy.indexing.Loc
+.. autoclass:: nzpyida.indexing.Loc
 	:members:
 
 
@@ -80,7 +80,7 @@ Filtering
 
 .. automethod:: IdaDataFrame.delete_na 
 
-.. autoclass:: ibmdbpy.filtering.FilterQuery
+.. autoclass:: nzpyida.filtering.FilterQuery
 	:members:
 
 .. automethod:: IdaDataFrame.__lt__
@@ -101,9 +101,9 @@ Feature Engineering
 
 .. automethod:: IdaDataFrame.__setitem__
 
-.. automethod:: ibmdbpy.aggregation.aggregate_idadf
+.. automethod:: nzpyida.aggregation.aggregate_idadf
 
-.. currentmodule:: ibmdbpy.frame
+.. currentmodule:: nzpyida.frame
 
 .. automethod:: IdaDataFrame.__add__
 
@@ -333,43 +333,43 @@ _combine_check
 --------------
 .. automethod:: IdaDataFrame._combine_check
 
-These functions are defined in ibmdbpy.statistics but apply to IdaDataFrames.
+These functions are defined in nzpyida.statistics but apply to IdaDataFrames.
 
 
 
 
 _numeric_stats
 --------------
-.. autofunction:: ibmdbpy.statistics._numeric_stats
+.. autofunction:: nzpyida.statistics._numeric_stats
 
 _get_percentiles
 ----------------
-.. autofunction:: ibmdbpy.statistics._get_percentiles
+.. autofunction:: nzpyida.statistics._get_percentiles
 
 _categorical_stats
 ------------------
-.. autofunction:: ibmdbpy.statistics._categorical_stats
+.. autofunction:: nzpyida.statistics._categorical_stats
 
 _get_number_of_nas
 ------------------
-.. autofunction:: ibmdbpy.statistics._get_number_of_nas
+.. autofunction:: nzpyida.statistics._get_number_of_nas
 
 _count_level
 ------------
-.. autofunction:: ibmdbpy.statistics._count_level
+.. autofunction:: nzpyida.statistics._count_level
 
 _count_level_groupby
 --------------------
-.. autofunction:: ibmdbpy.statistics._count_level_groupby
+.. autofunction:: nzpyida.statistics._count_level_groupby
 
 _factors_count
 --------------------
-.. autofunction:: ibmdbpy.statistics._factors_count
+.. autofunction:: nzpyida.statistics._factors_count
 
 _factors_sum
 --------------------
-.. autofunction:: ibmdbpy.statistics._factors_sum
+.. autofunction:: nzpyida.statistics._factors_sum
 
 _factors_avg
 --------------------
-.. autofunction:: ibmdbpy.statistics._factors_avg
+.. autofunction:: nzpyida.statistics._factors_avg

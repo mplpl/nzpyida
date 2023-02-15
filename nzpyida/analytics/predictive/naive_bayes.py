@@ -8,6 +8,13 @@
 #
 # The full license is in the LICENSE file, distributed with this software.
 #-----------------------------------------------------------------------------
+"""
+The naive Bayes classifier is a simpler classification algorithm than most,
+which makes it quick and easy to apply. While it does not compete with more
+sophisticated algorithms with respect to classification accuracy, in some
+cases it may be able to deliver similar results in a fraction of the
+computation time.
+"""
 from typing import List
 from nzpyida.frame import IdaDataFrame
 from nzpyida.base import IdaDataBase

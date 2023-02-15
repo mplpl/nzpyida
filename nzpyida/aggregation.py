@@ -84,7 +84,7 @@ def aggregate_idadf(idadf, method, other, swap = False):
         idadf, other = other, idadf
 
 
-    if self._idadb._is_netezza_system():
+    if idadf._idadb._is_netezza_system():
         power_function = " POW"
     else:
         power_function = " POWER"

@@ -3,10 +3,10 @@
 License
 *******
 
-Ibmdbpy is a community project that is distributed under the New BDS License (3-clauses). The BSD license grants you almost unlimited freedom of use as long as the following conditions are met:
+nzpyida is a community project that is distributed under the New BDS License (3-clauses). The BSD license grants you almost unlimited freedom of use as long as the following conditions are met:
 
 	* You include the BSD copyright notice (see below).
-	* The name of IBM or any ibmdbpy contributor is not used to endorse or promote software derived from ibmdbpy without explicit permission.
+	* The name of IBM or any nzpyida and/or ibmdbpy contributor is not used to endorse or promote software derived from nzpyida and/or ibmdbpy without explicit permission.
 
 
 License::

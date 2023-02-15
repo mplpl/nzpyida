@@ -8,6 +8,9 @@
 #
 # The full license is in the LICENSE file, distributed with this software.
 #-----------------------------------------------------------------------------
+"""
+This module contains a class that is the base for all regression algorithms.
+"""
 from typing import Dict
 from nzpyida.frame import IdaDataFrame
 from nzpyida.base import IdaDataBase

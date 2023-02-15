@@ -6,7 +6,7 @@ Shared functions and methods
 Custom Exceptions
 =================
 
-.. currentmodule:: ibmdbpy.exceptions
+.. currentmodule:: nzpyida.exceptions
 
 Error
 -----
@@ -39,7 +39,7 @@ IdaNaiveBayesError
 User Interactions
 =================
 
-.. currentmodule:: ibmdbpy.utils
+.. currentmodule:: nzpyida.utils
 
 Configuring the environment
 ---------------------------

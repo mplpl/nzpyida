@@ -2,7 +2,7 @@
 
 IdaGeoDataFrame
 ***************
-An IdaGeoDataFrame is a reference to a spatial table in a remote Db2 instance.
+An IdaGeoDataFrame is a reference to a spatial table in a remote Netezza instance.
 
 The most important property of an IdaGeoDataFrame is that it always has a reference to one IdaGeoSeries column
 that holds a special status. This IdaGeoSeries is referred to as the IdaGeoDataFrame‘s “geometry”.
@@ -14,7 +14,7 @@ of an IdaGeoDataFrame.
 
 Open an IdaGeoDataFrame
 =======================
-.. currentmodule:: ibmdbpy.geoFrame
+.. currentmodule:: nzpyida.geoFrame
 
 .. autoclass:: IdaGeoDataFrame
 

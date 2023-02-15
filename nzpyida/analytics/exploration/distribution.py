@@ -9,7 +9,8 @@
 # The full license is in the LICENSE file, distributed with this software.
 #-----------------------------------------------------------------------------
 """
-Exploratory data analysis - data distribution functions.
+This module consists of algorithms used to describe the empirical distribution
+of single attributes or the joint distribution of multiple—usually two—attributes.
 """
 
 from typing import List
@@ -20,7 +21,11 @@ from nzpyida.analytics.utils import call_proc_df_in_out
 def moments(in_df: IdaDataFrame, in_column: str, by_column: str=None,
     out_table: str=None) -> IdaDataFrame:
     """
-    Calculates the moments of a numeric input column: mean, variance,
+    Moments are quantities used to describe certain aspects of continuous attribute
+    distributions. Of particular interest are the central moments or moments around
+    the mean.
+
+    This function Calculates the moments of a numeric input column: mean, variance,
     stand-ard deviation, skewness and (excess) kurtosis as well as the
     count of cases, the minimum and the maximum.
 
@@ -32,7 +37,7 @@ def moments(in_df: IdaDataFrame, in_column: str, by_column: str=None,
     in_column : str
         the numeric input table column
 
-    by : str
+    by_culumn : str
         the input table column which splits the data into groups for which the
         operation is to be per-formed
 
@@ -54,7 +59,12 @@ def moments(in_df: IdaDataFrame, in_column: str, by_column: str=None,
 def quantile(in_df: IdaDataFrame, in_column: str, quantiles: List[int],
     out_table: str=None) -> IdaDataFrame:
     """
-    Calculates quantile limit(s) for a numeric column.
+    Quantiles constitute a convenient and intuitive description of continuous attribute
+    distribution that allow observation of location, dispersion, and asymmetry.
+    Quantiles of a continuous attribute are values from its range taken at regular intervals
+    of its cumulative distribution.
+
+    This function calculates quantile limit(s) for a numeric column.
 
     Parameters
     ----------
@@ -87,7 +97,11 @@ def quantile(in_df: IdaDataFrame, in_column: str, quantiles: List[int],
 def outliers(in_df: IdaDataFrame, in_column: str, multiplier: float=1.5,
     out_table: str=None) -> IdaDataFrame:
     """
-    Detect outliers of a numeric column.
+    Outliers are the values below the first quartile or above the third quartile by more than
+    the inter-quartile range multiplied by a coefficient of the attribute, which controls
+    the aggressiveness of outlier detection.
+
+    This function detects outliers of a numeric attribute (a column).
 
     Parameters
     ----------
@@ -117,7 +131,10 @@ def outliers(in_df: IdaDataFrame, in_column: str, multiplier: float=1.5,
 
 def unitable(in_df: IdaDataFrame, in_column: str, out_table: str=None) -> IdaDataFrame:
     """
-    Creates a univariate frequency table for one column of the input table.
+    A univariate frequency table describes the distribution of a discrete attribute
+    by providing the occurrence count for each unique value.
+
+    This function creates a univariate frequency table for one column of the input table.
 
     Parameters
     ----------
@@ -141,10 +158,14 @@ def unitable(in_df: IdaDataFrame, in_column: str, out_table: str=None) -> IdaDat
     }
     return call_proc_df_in_out(proc='UNITABLE', in_df=in_df, params=params, out_table=out_table)
 
-def bitable(in_df: IdaDataFrame, in_column: List[str], freq: bool=False, cum: bool=False, 
+def bitable(in_df: IdaDataFrame, in_column: List[str], freq: bool=False, cum: bool=False,
     out_table: str=None) -> IdaDataFrame:
     """
-    Creates a bivariate frequency table for two columns of the input table.
+    A bivariate frequency table describes the joint probability distribution of two
+    discrete attributes, by providing the occurrence count for each distinct combination
+    of their values.
+
+    This function creates a bivariate frequency table for two columns of the input table.
 
     Parameters
     ----------
@@ -183,7 +204,14 @@ def histogram(in_df: IdaDataFrame, in_column: str, nbreaks: int=None, right: boo
     btable: str=None, bcolumn: str=None, density: bool=False, midpoints: bool=False,
     freq: bool=False, cum: bool=False, out_table: str=None) -> IdaDataFrame:
     """
-    Creates histograms. The number of bins and the bins themselves
+    A histogram is a frequency table counterpart for continuous attributes. Although usually
+    presented visually as a graph, it can be considered a table providing occurrence counts
+    for a series of disjoint intervals covering the range of the attribute. The intervals
+    can be of equal or inequal width. The number of intervals and their boundaries can be
+    specified manually to ensure the histogram is most meaningful and readable, or adjusted
+    automatically to the distribution.
+
+    This function creates histograms. The number of bins and the bins themselves
     can be specified or are automatically calculated.
 
     Parameters

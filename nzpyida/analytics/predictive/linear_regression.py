@@ -8,6 +8,13 @@
 #
 # The full license is in the LICENSE file, distributed with this software.
 #-----------------------------------------------------------------------------
+"""
+Linear regression is a simple but very useful and commonly applied approach
+to the regression task, even though it only performs direct modeling of
+linear relationships. It is the thing that limits its applicability, a linear
+model representation, that makes it fast, efficient, and easy to use (compared
+to more refined regression algorithms).
+"""
 from typing import List
 from nzpyida.frame import IdaDataFrame
 from nzpyida.base import IdaDataBase

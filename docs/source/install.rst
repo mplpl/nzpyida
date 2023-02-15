@@ -4,16 +4,18 @@ Install
 Installing
 ----------
 
-Install ibmdbpy from pip by issuing this statement::
+Install nzpyida from pip by issuing this statement::
 
-	> pip install ibmdbpy
+	> pip install nzpyida
 
 Updating
 --------
 
-Ibmdbpy changes a lot. We regularly fix bugs and add new features. To update your ibmdbpy installation, issue this statement::
+To update your nzpyida installation, issue this statement::
 
-	> pip install ibmdbpy --update --no-deps
+	> pip install nzpyida --update --no-deps
+
+Ensure you have INZA version 11.2.1.0 or later installed in your Netezza database.
 
 Introduction
 ------------
@@ -40,75 +42,29 @@ By default, pytest assumes that a database named "BLUDB" is reachable via an ODB
 	* ``--jdbc`` : jdbc url string
 	* ``--table`` : Table to use to test (default: iris)
 
-For testing, all tables from ibmdbpy.sampledata can be used. These include the tables iris, swiss, and titanic.
+For testing, all tables from nzpyida.sampledata can be used. These include the tables iris, swiss, and titanic.
 
 Strict dependencies
 -------------------
 
-Ibmdbpy uses data structures and methods from two common Python libraries - Pandas and Numpy - and additionally depends on a few pure-python libraries, which makes ibmdbpy easy to install:
+nzpyida uses data structures and methods from two common Python libraries - Pandas and Numpy - and additionally depends on a few pure-python libraries, which makes nzpyida easy to install:
 
 	* pandas
 	* numpy
 	* future
 	* six
 	* lazy
-	* pypyodbc
+
+In addition, for establishing connection to Netezza database one of the following libraries is needed:
+
+	* nzpy - for nzpy connectivity
+	* pypyodbc - for ODBC connectivity
+	* jaydebeapi - for JDBC connectivity
 
 Optional dependencies
 ---------------------
 
 Some optional libraries can be installed to benefit from extra features, for example:
 
-	* JayDeBeApi with JPype1 (Connection via JDBC)
 	* pytest (for running tests)
 	* sphinx (for building the documentation)
-
-You can install ibmdbpy together with the required versions of the JayDeBeApi and JPype1 packages
-for the JDBC support by executing the following statement::
-
-  > pip install ibmdbpy[jdbc]
-
-JayDeBeApi and JPype1 require a C++ compiler, which may make it difficult to install for some users.
-
-Package structure
------------------
-
-.. code-block:: none
-
-	ibmdbpy-master
-	├── LICENSE.txt
-	├── MANIFEST.in
-	├── README.rst
-	├── setup.cfg
-	├── setup.py
-	├── docs
-	│   ├── ...
-	└── ibmdbpy
-	    ├── __init__.py
-	    ├── aggregation.py
-	    ├── base.py
-	    ├── exceptions.py
-	    ├── filtering.py
-	    ├── frame.py
-	    ├── geoFrame.py
-        ├── geoSeries.py
-	    ├── indexing.py
-	    ├── internals.py
-	    ├── series.py
-	    ├── sql.py
-	    ├── statistics.py
-	    ├── internals.py
-	    ├── utils.py
-	    ├── benchmark
-	    │   ├── __init__.py
-	    │   ├── benchmark.py
-	    ├── learn
-	    │   ├── __init__.py
-	    │   ├── association_rules.py
-	    │   ├── kmeans.py
-	    │   ├── naive_bayes.py
-	    ├── sampledata
-	    │   ├── ...
-	    └── tests
-	    	├── conftest.py
-	        └── ...

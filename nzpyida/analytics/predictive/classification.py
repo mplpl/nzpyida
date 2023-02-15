@@ -8,6 +8,9 @@
 #
 # The full license is in the LICENSE file, distributed with this software.
 #-----------------------------------------------------------------------------
+"""
+This module contains a class that is the base for all classification algorithms.
+"""
 from typing import Tuple
 from nzpyida.frame import IdaDataFrame
 from nzpyida.base import IdaDataBase

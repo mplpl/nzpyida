@@ -3,10 +3,10 @@
 IdaDataBase
 ***********
 
-Connect to Db2
+Connect to Netezza
 ==============
 
-.. currentmodule:: ibmdbpy.base
+.. currentmodule:: nzpyida.base
 
 .. autoclass:: IdaDataBase
 

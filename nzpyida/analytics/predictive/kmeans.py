@@ -8,6 +8,22 @@
 #
 # The full license is in the LICENSE file, distributed with this software.
 #-----------------------------------------------------------------------------
+"""
+The k-means algorithm is the most widely-used clustering algorithm that uses
+an explicit distance measure to partition the data set into clusters.
+The main concept behind the k-means algorithm is to represent each cluster
+by the vector of mean attribute values of all training instances assigned
+to that cluster, called the cluster’s center. There are direct consequences
+of such a cluster representation:
+
+- the algorithm handles continuous attributes only, although workarounds
+for discrete attributes are possible
+
+- both the cluster formation and cluster modeling processes can be performed
+in a computationally efficient way by applying the specified distance
+function to match instances against cluster centers
+"""
+
 from typing import List
 from nzpyida.frame import IdaDataFrame
 from nzpyida.base import IdaDataBase
@@ -49,7 +65,19 @@ class KMeans(PredictiveModeling):
         k: int=3, max_iter: int=5, rand_seed: int=12345, id_based: bool=False,
         statistics: str=None, transform: str='L') -> IdaDataFrame:
         """
-        Creates a model for clustering based on provided data and store it in a database.
+        Creates and trains a model for clustering based on provided data and store
+        it in a database.
+
+        The training algorithm operates by performing several iterations of the same
+        basic process. Each training instance is assigned to the closest cluster
+        with respect to the specified distance function, applied to the instance
+        and cluster center. All cluster centers are then re-calculated as the mean
+        attribute value vectors of the instances assigned to particular clusters.
+        The cluster centers are initialized by randomly picking k training instances,
+        where k is the desired number of clusters. The iterative process should
+        terminate when there are either no or sufficiently few changes in cluster
+        assignments. In practice, however, it is sufficient to specify the number of
+        iterations, typically a number between 3 and 36.
 
         Parameters
         ----------

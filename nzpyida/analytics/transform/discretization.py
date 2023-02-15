@@ -8,7 +8,14 @@
 #
 # The full license is in the LICENSE file, distributed with this software.
 #-----------------------------------------------------------------------------
-
+"""
+The discretization process assigns a discrete value to each interval of continuous
+attribute a to create a new discrete attribute a'. A discretization algorithm
+determines the interval boundaries that are likely to preserve as much useful
+information provided by the original attribute as possible. Data set discretization
+ should preserve the relationship between the class and the discretized attributes
+  if the data set is to be used for creation of a classification model.
+"""
 from nzpyida.frame import IdaDataFrame
 from nzpyida.base import IdaDataBase
 from nzpyida.analytics.utils import map_to_props, materialize_df, make_temp_table_name

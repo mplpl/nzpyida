@@ -8,6 +8,19 @@
 #
 # The full license is in the LICENSE file, distributed with this software.
 #-----------------------------------------------------------------------------
+"""
+Regression trees are decision trees adapted to the regression task, which store
+numeric target attribute values instead of class labels in leaves, and use
+appropriately modified split selection and stop criteria.
+
+As with decision trees, regression tree nodes decompose the data into subsets,
+and regression tree leaves correspond to sufficiently small or sufficiently
+uniform subsets. Splits are selected to decrease the dispersion of target
+attribute values, so that they can be reasonably well predicted by their mean
+values at leaves. The resulting model is piecewise-constant, with fixed
+predicted values assigned to regions to which the domain is decomposed by
+the tree structure.
+"""
 from typing import List
 from nzpyida.frame import IdaDataFrame
 from nzpyida.base import IdaDataBase
@@ -46,7 +59,8 @@ class DecisionTreeRegressor(Regression):
         min_split: int=50, max_depth: int=10, val_table: str=None, qmeasure: str=None,
         statistics: str=None):
         """
-        Creates a regression tree model based on provided data and store it in a database.
+        This function creates a regression tree model based on provided data and
+        store it in a database.
 
         Parameters
         ----------

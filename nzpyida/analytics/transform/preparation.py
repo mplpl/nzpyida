@@ -15,7 +15,14 @@ from nzpyida.analytics.utils import call_proc_df_in_out
 def std_norm(in_df: IdaDataFrame, id_column: str, in_column: str, by_column: str=None,
     out_table: str=None) -> IdaDataFrame:
     """
-    Normalize and stardardize columns of the input data frame and returns that in a new data frame.
+    Standardization and normalization transformations use the original continuous
+    attribute a to generate a new continuous attribute a ' that has a different range
+    or distribution than the original attribute. Common transformations modify the
+    range to fit the [-1,1 ] interval (normalization) or modify the distribution to
+    have a mean of 0 and a standard deviation of 1 (standardization).
+
+    This function normalize and stardardize columns of the input data frame and returns
+    that in a new data frame.
 
     Parameters
     ----------
@@ -57,7 +64,13 @@ def std_norm(in_df: IdaDataFrame, id_column: str, in_column: str, by_column: str
 def impute_data(in_df: IdaDataFrame, in_column: str=None, method: str=None,
     numeric_value: float=-1, nominal_value: str='missing', out_table: str=None) -> IdaDataFrame:
     """
-    Replaces missing values in the input data frame and returns the result in a new data frame.
+    Many analytic algorithms require that the data set has no missing attribute values.
+    However, real-world data sets frequently suffer from missing attribute values.
+    Missing value imputation provides usable attribute values in place of the missing values,
+    allowing the algorithms to run.
+
+    This function replaces missing values in the input data frame and returns the result
+    in a new data frame.
 
     Parameters
     ----------
@@ -97,11 +110,27 @@ def impute_data(in_df: IdaDataFrame, in_column: str=None, method: str=None,
     return call_proc_df_in_out(proc='IMPUTE_DATA', in_df=in_df, params=params, out_table=out_table)
 
 
-def random_sample(in_df: IdaDataFrame, size: int, fraction: float=None, by_column: str=None, 
+def random_sample(in_df: IdaDataFrame, size: int, fraction: float=None, by_column: str=None,
     out_signature: str=None, rand_seed: int=None, out_table: str=None) -> IdaDataFrame:
     """
-    Creates a random sample of a data frame a fixed size or a fixed probability and
-    returns the result in a new data frame.
+    Random sampling procedures are a vital component of many analytical systems. They can
+    be used to select a test sample and a training sample for a model building process
+    (machine learning). They can also be used to get a smaller sample of the training
+    set, which you may do because of learning algorithm complexity considerations.
+    In both cases, you would sample without replacement.
+
+    Another application of sampling is the learning methods based on bootstrapping.
+    This requires many independent samples from the same data, which are preferentially
+    applied if the available data sets are small or for other reasons where the sample
+    independence is vital. Samples with replacement are usually drawn in this case.
+    
+    In application, sampling is used for promotion campaigns, for example when you want
+    only a representative set of customers to be subjects of an action.
+    In all cases, whether for use with scientific methods or business practices, uniform
+    sampling is important.
+
+    This function creates a random sample of a data frame a fixed size or a fixed
+    probability and returns the result in a new data frame.
 
     Parameters
     ----------

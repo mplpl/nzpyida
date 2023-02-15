@@ -8,6 +8,32 @@
 #
 # The full license is in the LICENSE file, distributed with this software.
 #-----------------------------------------------------------------------------
+"""
+In many classification applications it may be required or desirable not
+only to accurately classify instances, but also to inspect the model.
+The inspection makes it possible to explain its decisions, modify it,
+or combine with some existing background knowledge. In such applications,
+where both the high classification accuracy and human-readability of the
+model are required, the method of choice is typically going to be
+decision trees.
+
+A decision tree is a hierarchical structure that represents a classification
+model using a "divide and conquer" approach. Internal tree nodes represent
+splits applied to decompose the data set into subsets, and terminal nodes,
+also referred to as leaves, assign class labels to sufficiently small
+or uniform subsets. Splits are specified by logical conditions based on
+selected single attributes, with a separate outgoing branch corresponding
+to each possible outcome.
+
+The concept of decision tree construction is to select splits that decrease
+the impurity of class distribution in the resulting subsets of instances,
+and increase the domination of one or more classes over the others.
+The goal is to find a subset containing only or mostly instances of one
+class after a small number of splits, so that a leaf with that class
+label is created. This approach promotes simple trees, which typically
+generalize better.
+"""
+
 from typing import List
 from nzpyida.frame import IdaDataFrame
 from nzpyida.base import IdaDataBase
@@ -42,7 +68,7 @@ class DecisionTreeClassifier(Classification):
         in_columns: List[str]=None, col_def_type: str=None, col_def_role: str=None,
         col_properties_table: str=None, weights: str=None, eval_measure: str=None,
         min_improve: float=0.02, min_split: int=50, max_depth: int=10, val_table: str=None,
-        val_weights: str=None, qmeasure: str=None, statistics: str=None):        
+        val_weights: str=None, qmeasure: str=None, statistics: str=None):
         """
         Grows the decision tree and stores its model in the database.
 
